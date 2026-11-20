@@ -1,7 +1,5 @@
 services:
-  agenda:
-    build:
-      context: .
+  agenda:          
     image: agenda-flutter-web:latest
     container_name: agenda-flutter-web
     restart: unless-stopped
