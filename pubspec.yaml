@@ -1,0 +1,26 @@
+name: webagenda
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: ^0.19.0
+  fluttertoast: ^8.2.5
+  carousel_slider: ^5.1.1
+  table_calendar: ^3.0.7
+  mercadopago_transparent: ^1.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0  
+
+flutter:
+  uses-material-design: true
+  assets:
+    - imagens/
