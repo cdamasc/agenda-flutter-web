@@ -1,0 +1,22 @@
+services:
+  agenda:
+    build:
+      context: .
+    image: agenda-flutter-web:latest
+    container_name: agenda-flutter-web
+    restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=n8n-vzmr_web
+      - traefik.http.routers.agenda.rule=Host(`agenda.nkrd.com.br`)
+      - traefik.http.routers.agenda.entrypoints=websecure
+      - traefik.http.routers.agenda.tls=true
+      - traefik.http.routers.agenda.tls.certresolver=letsencrypt
+      - traefik.http.services.agenda.loadbalancer.server.port=80
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
+    name: n8n-vzmr_web
